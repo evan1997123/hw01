@@ -35,7 +35,6 @@ builtins.trim = function(str) {
       break;
     }
   }
-  return str;
   var i;
   for(i = start;i <= end;i++)
   {
