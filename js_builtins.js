@@ -68,7 +68,7 @@ builtins.search = function(sourceString, searchString) {
 
 // ----------------------------------------------------------------------------
 
-// Exercise 3. Rewriting reverse() using loops
+// Exercise 3. Rewriting reverse()
 
 // Write a function that takes an array and returns the array in reversed order
 // (by indices).
@@ -79,11 +79,15 @@ builtins.search = function(sourceString, searchString) {
 // ex. builtins.reverse([123]) -> [123]
 
 builtins.reverse = function(arr) {
-  var retval = [];
-  var i =0;
-  for(i = arr.length-1; i>=0; i--)
+  if(arr.length == 0)
   {
-    retval.push(arr[i]);
+    return [];
   }
-  return retval;
+  if(arr.length == 1)
+  {
+    return arr;
+  }
+  let next = [arr[0]];
+  arr = arr.slice(1,arr.length);  
+  return builtins.reverse(arr).concat(next);
 };
