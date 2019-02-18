@@ -35,7 +35,7 @@ builtins.trim = function(str) {
       break;
     }
   }
-
+  return str;
   var i;
   for(i = start;i <= end;i++)
   {
@@ -80,6 +80,11 @@ builtins.search = function(sourceString, searchString) {
 // ex. builtins.reverse([123]) -> [123]
 
 builtins.reverse = function(arr) {
-  let next = arr.unshift();
-  return builtins.reverse(arr).concat(next);
+  var retval = [];
+  var i =0;
+  for(i = arr.length-1; i>=0; i--)
+  {
+    retval.push(arr[i]);
+  }
+  return retval;
 };
